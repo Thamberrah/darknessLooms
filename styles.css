@@ -9,3 +9,13 @@ nav {
     flex-direction: row;
     justify-content: space-around;  
 }
+
+nav img {
+    width: 300px;
+    height: 205px;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+}
