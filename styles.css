@@ -1,211 +1,64 @@
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-:root {
-    --container-bg-color: #333;
-    --one-bg-color: linear-gradient(
-        to right,
-        #462523 0,
-        #cb9b51 22%,
-        #f6e27a 45%,
-        #f6f2c0 50%,
-        #f6e27a 55%,
-        #cb9b51 78%,
-        #462523 100%
-    );
-    --one-button-hover-color: rgba(161, 11, 11, 0.3);
-
-    --two-bg-color: linear-gradient(
-        to right,
-        #462523 0,
-        #cb9b51 22%,
-        #f6e27a 45%,
-        #f6f2c0 50%,
-        #f6e27a 55%,
-        #cb9b51 78%,
-        #462523 100%
-    );
-    --two-button-hover-color: rgba(161, 11, 11, 0.3);
-
-    --three-bg-color: linear-gradient(
-        to right,
-        #462523 0,
-        #cb9b51 22%,
-        #f6e27a 45%,
-        #f6f2c0 50%,
-        #f6e27a 55%,
-        #cb9b51 78%,
-        #462523 100%
-    );
-    --three-button-hover-color: rgba(161, 11, 11, 0.3);
-
-    --four-bg-color: linear-gradient(
-        to right,
-        #462523 0,
-        #cb9b51 22%,
-        #f6e27a 45%,
-        #f6f2c0 50%,
-        #f6e27a 55%,
-        #cb9b51 78%,
-        #462523 100%
-    );
-    --four-button-hover-color: rgba(161, 11, 11, 0.3);
-
-
-    --hover-width: 75%;
-    --other-width: 25%;
-    --speed: 1000ms;
-}
-
-
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 header {
-    background-color: rgba(19, 22, 26, 0.2);
+  background-color: #cb9b51;
+  opacity: 0.8;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;  
-    max-width: 1200px;
-    height: 60px;
-    margin: 0 auto;
-    padding: 0 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 nav img {
-    width: 90px;
+  width: 90px;
 }
 
 main {
-    width: 100%;
-    height: 30rem;
-    overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  background-color: #cb9b51;
 }
 
-h1 {
-    font-size: 2.8rem;
-    color: #000;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
+.box {
+  background-color: #cb9b51;
+  height: 500px;
+  padding: 25px;
+  flex: 1;
+  transition: 1s;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+}
+.box h1 {
+  text-align: center;
 }
 
-.button {
-    display: block;
-    position: absolute;
-    left: 35%;
-    top: 40%;
-    height: 2.5rem;
-    padding-top: 1.3rem;
-    width: 15rem;
-    text-align: center;
-    border: #000 solid 0.2rem;
-    transform: translateX(-25%);
+.box:hover {
+  flex: 4;
+  background: linear-gradient(to right, #cb9b51 0, #f6e27a 25%, #f6f2c0 50%, #f6e27a 75%, #cb9b51 100%);
 }
 
-.quarter.one:hover, .quarter.two:hover {
-    background-color: var(--one-button-hover-color);
-    border-color: var(--one-button-hover-color);
-}
-.quarter.three:hover, .quarter.four:hover {
-    background-color: var(--three-button-hover-color);
-    border-color: var(--three-button-hover-color);
-}
-
-.container {
-    position: relative;
-    width: 100%;
-    background: var(--container-bg-color);
-}
-
-.quarter {
-    position: absolute;
-    width: 25%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.quarter.one {
-    left: 0;
-    z-index: 1;
-    /*background-image: center center no-repeat;
-    background-size: cover;*/
-}
-
-.quarter.one:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--one-bg-color);
-}
-
-.quarter.two {
-    left: 25%;
-    /*background-image: center center no-repeat;
-    background-size: cover;*/
-}
-
-.quarter.two:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--one-bg-color);
-}
-
-.quarter.three {
-    right: 25%;
-    /*background-image: center center no-repeat;
-    background-size: cover;*/
-}
-
-.quarter.three:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--one-bg-color);
-}
-
-.quarter.four {
-    right: 0%;
-    /*background-image: center center no-repeat;
-    background-size: cover;*/
-}
-
-.quarter.four:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--one-bg-color);
-}
-
-
-.quarter.one, .quarter.one:before, .quarter.two, .quarter.two:before, .quarter.three, .quarter.three:before, .quarter.four, .quarter.four:before {
-    transition: var(--speed) all ease-in-out;
-}
-
-.hover-left .one {
-    width: var(--hover-width);
-}
-.hover-left .one {
-    width: var(--other-width);
-}
-
-.hover-left .one:before {
-    z-index: 2;
-}
-
-/* Re-trace steps, go for two horizontal lines, then proceed with 3, then 4*/
+/* linear gradient {
+            to right,
+        #462523 0,
+        #cb9b51 22%,
+        #f6e27a 45%,
+        #f6f2c0 50%,
+        #f6e27a 55%,
+        #cb9b51 78%,
+        #462523 100%
+    );
+*//*# sourceMappingURL=styles.css.map */

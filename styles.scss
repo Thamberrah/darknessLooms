@@ -1,0 +1,78 @@
+$bgColor: #cb9b51;
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+header {
+    background-color: #cb9b51;
+    opacity: 0.8;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    max-width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+nav img {
+    width: 90px;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    background-color: $bgColor;
+}
+
+.box {
+    background-color: $bgColor;
+    height: 500px;
+    padding: 25px;
+    flex: 1;
+    transition: 1s;
+    box-shadow: 0 0 60px rgb(0 0 0 / 0.2);
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.box:hover {
+    flex: 4;
+    background: linear-gradient(
+        to right,
+        #cb9b51 0,
+        #f6e27a 25%,
+        #f6f2c0 50%,
+        #f6e27a 75%,
+        #cb9b51 100%
+    );
+}
+
+
+
+
+
+/* linear gradient {
+            to right,
+        #462523 0,
+        #cb9b51 22%,
+        #f6e27a 45%,
+        #f6f2c0 50%,
+        #f6e27a 55%,
+        #cb9b51 78%,
+        #462523 100%
+    );
+*/
+
